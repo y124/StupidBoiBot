@@ -76,7 +76,7 @@ async def on_voice_state_update(member,before,after):
 			if ((os.path.exists(cfg.soundsPath+'/'+user))and(len(os.listdir(cfg.soundsPath+'/'+user))>0)):
 			
 				currentChannel=after.channel
-				#Wait to connect to users voice channel
+				#Wait to connect to the users voice channel
 				await currentChannel.connect()
 				
 				#find where the user is
@@ -99,7 +99,7 @@ async def on_voice_state_update(member,before,after):
 					#timer to allowe limited time for audio to play
 					enabledTimer = True
 					
-					#if the user is found in the noSoundTimer list disabled their timer
+					#if the user is found in the noSoundTimer list disable their timer
 					if user in cfg.noSoundTimer:
 						enabledTimer = False
 					
